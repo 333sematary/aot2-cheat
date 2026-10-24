@@ -1,6 +1,6 @@
 # AOT2 Cheat
 
-A customizable C++17 Windows cheat/trainer for **Attack on Titan 2: Final Battle**, intended for offline single-player use. The source is free to customize under the MIT License. Feature signatures and behavior are based on the supplied Cheat Engine table.
+A customizable C++17 Windows cheat for **Attack on Titan 2: Final Battle**, intended for offline single-player use. The source is free to customize under the MIT License. Feature signatures and behavior are based on the supplied Cheat Engine table.
 
 ![Animated preview of the AOT2 Cheat / Trainer interface](docs/demo.gif)
 
