@@ -1,4 +1,4 @@
-# AOT2 Cheat / Trainer
+# AOT2 Cheat
 
 A customizable C++17 Windows cheat/trainer for **Attack on Titan 2: Final Battle**, intended for offline single-player use. The source is free to customize under the MIT License. Feature signatures and behavior are based on the supplied Cheat Engine table.
 
@@ -14,7 +14,7 @@ The [interactive interface preview](docs/demo.html) is included for local use; o
 - Feature cleanup restores original bytes when the game process is still available.
 - Press **F5** to retry process and signature discovery.
 
-This is an offline, single-player AOT2 cheat/trainer. Customize the C++ source for your own setup. Disable matching Cheat Engine scripts before using the launcher so two trainers do not patch the same code locations.
+This is an offline, single-player AOT2 cheat. Customize the C++ source for your own setup. Disable matching Cheat Engine scripts before using the launcher so two trainers do not patch the same code locations.
 
 The project is released under the MIT License. Lucide icons keep their separate ISC license in `assets/lucide/`.
 
