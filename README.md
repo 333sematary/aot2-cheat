@@ -1,12 +1,12 @@
-# AOT2 Launcher
+# AOT2 Cheat / Trainer
 
-A compact Windows launcher and C++17 trainer interface for **Attack on Titan 2: Final Battle**. It uses the supplied Cheat Engine table as a reference for its signatures and feature behavior.
+A customizable C++17 Windows cheat/trainer for **Attack on Titan 2: Final Battle**, intended for offline single-player use. The source is free to customize under the MIT License. Feature signatures and behavior are based on the supplied Cheat Engine table.
 
-![Animated preview of the AOT2 Launcher interface](docs/demo.gif)
+![Animated preview of the AOT2 Cheat / Trainer interface](docs/demo.gif)
 
-Open the [interactive interface preview](docs/demo.html) in a browser.
+The [interactive interface preview](docs/demo.html) is included for local use; open the downloaded file in a browser.
 
-## Features
+## What it includes
 
 - Minimal frameless Win32 interface with category navigation and inline Player Data editing.
 - Automatic `AOT2_EU.exe` detection and safe process-handle management.
@@ -14,7 +14,9 @@ Open the [interactive interface preview](docs/demo.html) in a browser.
 - Feature cleanup restores original bytes when the game process is still available.
 - Press **F5** to retry process and signature discovery.
 
-This project is intended for offline, single-player use. Disable corresponding Cheat Engine scripts before using the C++ launcher so two trainers do not patch the same code locations.
+This is an offline, single-player AOT2 cheat/trainer. Customize the C++ source for your own setup. Disable matching Cheat Engine scripts before using the launcher so two trainers do not patch the same code locations.
+
+The project is released under the MIT License. Lucide icons keep their separate ISC license in `assets/lucide/`.
 
 ## Build
 
@@ -33,6 +35,7 @@ The executable is created at `build/Release/Launcher.exe`.
 - `src/process_manager.*` — process detection, signature scanner, validated memory operations, and patch restoration.
 - `src/feature_controller.*` — C++ feature hooks and native option handlers.
 - `assets/icons/` — Lucide navigation icons (ISC license).
+- `docs/demo.html` and `docs/demo.gif` — preview matching the launcher's real startup and category flow.
 
 ## Credits
 
