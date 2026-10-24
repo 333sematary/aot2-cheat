@@ -7,6 +7,7 @@ target_compile_definitions(Launcher PRIVATE UNICODE _UNICODE WIN32_LEAN_AND_MEAN
 target_link_libraries(Launcher PRIVATE user32 gdi32 gdiplus dwmapi winmm)
 if(MSVC)
   target_compile_options(Launcher PRIVATE /W4 /permissive-)
+  set_property(TARGET Launcher PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
 
 add_custom_command(TARGET Launcher POST_BUILD

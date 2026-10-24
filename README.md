@@ -18,6 +18,12 @@ This is an offline, single-player AOT2 cheat/trainer. Customize the C++ source f
 
 The project is released under the MIT License. Lucide icons keep their separate ISC license in `assets/lucide/`.
 
+## Download
+
+Get the latest portable **Windows x64** build from [GitHub Releases](https://github.com/333sematary/aot2-launcher/releases/latest). Extract the ZIP and run `Launcher.exe` from the extracted folder. The bundled `assets/icons/` directory must stay beside the executable.
+
+The launcher uses Win32 APIs and is currently Windows-only; no Linux binary is provided.
+
 ## Build
 
 Requirements: Windows 10/11, Visual Studio 2022 with **Desktop development with C++**, and CMake.
