@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AOT2 Launcher — Interface Preview</title>
+<style>
+:root{color-scheme:dark;font:600 14px "Segoe UI",Arial,sans-serif;color:#dedfe2;background:#0a0b0d}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 0,#1a1c20 0,#0a0b0d 62%);padding:24px}
+.shell{width:min(760px,100%);border:1px solid #292b2f;border-radius:22px;background:#0a0b0df2;box-shadow:0 28px 90px #0009;overflow:hidden}
+header{height:54px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #292b2f;position:relative;font-size:15px}
+.status{position:absolute;right:18px;color:#a8aaae;font-size:10px;letter-spacing:.08em;background:#17191c;border-radius:20px;padding:6px 12px}
+main{padding:22px 30px 10px;display:grid;grid-template-columns:1fr 1fr;gap:12px;min-height:352px}
+.card{border:1px solid #2b2d31;border-radius:19px;background:#101113;overflow:hidden;transition:transform .22s ease,border-color .22s ease}.card:hover{transform:translateY(-2px);border-color:#46494e}
+h2{font-size:14px;margin:0;padding:13px 16px;border-bottom:1px solid #4b4e52}.rows{padding:7px 10px}
+.row{height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 7px;border-radius:9px;transition:background .18s ease}.row:hover{background:#202226}
+.toggle{width:22px;height:22px;border:1px solid #4b4e53;background:#25272a;border-radius:8px;flex:none}
+nav{width:max-content;max-width:calc(100% - 24px);margin:0 auto 16px;padding:7px 11px;display:flex;gap:5px;background:#111214;border-radius:20px}
+button{width:48px;height:44px;border:0;border-radius:14px;background:transparent;color:#85888e;font:600 21px "Segoe UI Symbol","Segoe UI",sans-serif;cursor:pointer;position:relative;transition:background .18s ease,color .18s ease,transform .18s ease}
+button:hover{background:#25272a;color:#eee;transform:scale(1.04)}button[aria-selected=true]{color:#eee}button[aria-selected=true]::after{content:"";position:absolute;bottom:0;left:22px;width:5px;height:5px;border-radius:50%;background:#f5f6f8}
+.foot{text-align:center;color:#777a80;font-size:11px;font-weight:400;padding:0 16px 17px}
+@media(max-width:560px){main{padding:14px;grid-template-columns:1fr}.card:nth-child(2){display:none}.shell{width:440px}main{min-height:320px}}
+</style>
+</head>
+<body><section class="shell"><header><span id="title">Main</span><span class="status">● &nbsp; UI PREVIEW</span></header>
+<main><article class="card"><h2 id="leftTitle">Main</h2><div class="rows" id="left"></div></article><article class="card"><h2 id="rightTitle">Resources</h2><div class="rows" id="right"></div></article></main>
+<nav role="tablist" aria-label="Categories"></nav><div class="foot">Interactive visual preview · No game process is connected</div></section>
+<script>
+const pages=[
+ ['Main','Resources',['Personal Script','Max Money','Max City Materials','Max Wing of Freedom Badges','All Materials','All Gifts'],['Max Wing of Freedom Badges','All Materials','All Gifts']],
+ ['Current Character','Change Values',['Player Data','Current Character','Name','Level / Rank (-1)','Experience','Stats','Strength','Dexterity'],['Equipment','Blades Reinforcement','Scabbards / Canisters','ODM Gear Reinforcement']],
+ ['World','Supplies',['Infinite Gas','Infinite Blades','Infinite Ammo','Infinite Combat Items'],['Supplies','Infinite Gas','Infinite Blades']],
+ ['Combat Tools','Automation',['Infinite Dash & Multi-Attacks','Auto Hook Drive','Auto Overall Score SS'],['Automation','Quick Friendship Gain','Quick Camaraderie Points']],
+ ['Social','Progress',['Quick Friendship Gain','Quick Camaraderie Points'],['Progress','Max Money','All Gifts']]
+];
+const icons=['⌂','♙','◎','☷','⚙'], names=['Main','Player Data','World','Tools','Social'];
+const nav=document.querySelector('nav');
+function render(i){const p=pages[i];document.querySelector('#title').textContent=names[i];document.querySelector('#leftTitle').textContent=p[0];document.querySelector('#rightTitle').textContent=p[1];
+ for(const [id,items] of [['left',p[2]],['right',p[3]]])document.getElementById(id).innerHTML=items.map(x=>`<div class="row"><span>${x}</span><span class="toggle"></span></div>`).join('');
+ [...nav.children].forEach((b,n)=>b.setAttribute('aria-selected',String(n===i)));}
+names.forEach((n,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.title=n;b.setAttribute('aria-label',n);b.textContent=icons[i];b.onclick=()=>render(i);nav.append(b)});render(0);
+</script></body></html>

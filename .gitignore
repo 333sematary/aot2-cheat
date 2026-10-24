@@ -1,0 +1,11 @@
+/build*/
+/.vs/
+/.idea/
+*.user
+*.suo
+*.pdb
+*.ilk
+*.obj
+*.log
+Thumbs.db
+Desktop.ini
