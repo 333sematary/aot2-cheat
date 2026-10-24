@@ -46,3 +46,8 @@ The executable is created at `build/Release/Launcher.exe`.
 ## Credits
 
 Navigation icons from [Lucide](https://lucide.dev/), ISC licensed; see `assets/lucide/LICENSE`.
+
+## Contact
+
+- Email: [333sematary@gmail.com](mailto:333sematary@gmail.com)
+- Discord: `3yck`
